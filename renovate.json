@@ -2,7 +2,7 @@
     "$schema": "https://docs.renovatebot.com/renovate-schema.json",
     "autodiscover": true,
     "autodiscoverFilter": [
-        "Citr0sCo/citr0s-app"
+        "Citr0sCo/marek-app"
     ],
     "prHourlyLimit": 2,
     "prCreation": "immediate",

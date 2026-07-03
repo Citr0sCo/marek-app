@@ -1,6 +1,6 @@
 services:
-    citr0s-app:
-        image: citr0s/citr0s-app
+    marek-app:
+        image: citr0s/marek-app
         ports:
             - '83:80'
         environment:

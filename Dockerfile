@@ -33,6 +33,6 @@ WORKDIR /web-api/app
 
 COPY --from=publish /web-api/app/publish .
 
-COPY --from=angular-build /web-gui/dist/citr0s-app/browser /web-api/app/wwwroot
+COPY --from=angular-build /web-gui/dist/marek-app/browser /web-api/app/wwwroot
 
 CMD ["dotnet", "Citr0sApp.Api.dll"]

@@ -3,7 +3,7 @@
     "version": 1,
     "newProjectRoot": "projects",
     "projects": {
-        "citr0s-app": {
+        "marek-app": {
             "projectType": "application",
             "schematics": {
                 "@schematics/angular:component": {
@@ -18,7 +18,7 @@
                     "builder": "@angular/build:application",
                     "options": {
                         "outputPath": {
-                          "base": "dist/citr0s-app"
+                          "base": "dist/marek-app"
                         },
                         "index": "src/index.html",
                         "polyfills": [
@@ -79,10 +79,10 @@
                     "builder": "@angular/build:dev-server",
                     "configurations": {
                         "production": {
-                          "buildTarget": "citr0s-app:build:production"
+                          "buildTarget": "marek-app:build:production"
                         },
                         "development": {
-                          "buildTarget": "citr0s-app:build:development"
+                          "buildTarget": "marek-app:build:development"
                         }
                     },
                     "defaultConfiguration": "development"
@@ -90,7 +90,7 @@
                 "extract-i18n": {
                     "builder": "@angular/build:extract-i18n",
                     "options": {
-                      "buildTarget": "citr0s-app:build"
+                      "buildTarget": "marek-app:build"
                     }
                 },
                 "test": {

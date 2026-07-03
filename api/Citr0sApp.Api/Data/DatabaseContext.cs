@@ -15,7 +15,7 @@ public class DatabaseContext : DbContext
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
         Directory.CreateDirectory("assets");
-        optionsBuilder.UseSqlite("Data Source=assets/citr0s-app.db");
+        optionsBuilder.UseSqlite("Data Source=assets/marek-app.db");
         
         var value = Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT");
         if (value == "Development")
