@@ -1,0 +1,73 @@
+<div class="welcome-page" *ngIf="!profile || !profileDecoration || !activity">
+    Loading...
+</div>
+
+<div class="welcome-page" *ngIf="profile && profileDecoration && activity">
+    <div class="o-grid">
+        <div class="o-grid__col text-left u-ml-3">
+            <div class="o-grid o-grid__col--fixed">
+                <div class="o-grid__col o-grid__col--fixed" style="display:flex;">
+                    <div class="user-status user-status--{{ SteamUserStatus[profile.status].toLowerCase() }}"></div>
+                    <div style="margin-right:5px;background:url('{{ profileDecoration?.avatarBorder }}');padding: 5px; background-size: 100%;background-repeat: no-repeat;width: 50px;"><img src="{{ profile.avatarUrl }}" alt="" style="height:40px;"></div>
+                    <h1 style="margin:0;line-height:40px;display:flex;align-items: flex-end;">{{ profile.username }}</h1>
+                    <small *ngIf="SteamUserStatus[profile.status].toLowerCase() === 'offline'" style="color:rgba(255, 255, 255, 0.25);margin-left:5px;font-size:0.75rem;font-style: italic;display:flex;align-items: flex-end;">Last online {{ profile.lastOnline | date : 'EEEE, d MMM, y @ HH:mm' }}</small>
+                    <small *ngIf="SteamUserStatus[profile.status].toLowerCase() !== 'offline'" style="color:forestgreen;margin-left:5px;font-size:0.75rem;font-style: italic;display:flex;align-items: flex-end;">Online</small>
+                </div>
+            </div>
+            <hr>
+            <div class="o-grid__col" style="display:flex;flex-direction: column;">
+                <h4>Recent Activity</h4>
+                @for (game of activity.games | slice:0:3; track game.appId) {
+                    <a href="https://store.steampowered.com/app/{{ game.appId }}" target="_blank" style="text-decoration: none; color:#fff;">
+                        <div class="recent-game" style="display:flex;align-items: center;margin-bottom:5px;">
+                            <img src="{{ game.iconUrl }}" style="height:25px;"> <small style="margin-left:5px;font-size:0.75rem;display:flex;align-items: flex-end;">{{ game.name }} - {{ displayTimeFrom(game.playtimeLastTwoWeeksInMinutes) }} <span style="color:rgba(255, 255, 255, 0.25);margin-left:5px;font-size:0.75rem;font-style: italic;">({{ displayTimeFrom(game.playtimeForeverInMinutes) }})</span></small>
+                        </div>
+                    </a>
+                }
+            </div>
+            <hr>
+            <div>
+                <h4>Voice Servers <small style="font-size:0.75rem; color:rgba(255, 255, 255, 0.25);">IP: ts3.citr0s.com</small></h4>
+                <a href="https://discord.gg/BA4bcGQdRy" target="_blank">
+                    <div class="btn btn-discord">
+                        <img src="assets/apps/discord.png" alt="cit0s">
+                        Discord
+                    </div>
+                </a>
+                <a href="ts3server://ts3.citr0s.com?port=9987" target="_blank">
+                    <div class="btn btn-teamspeak3 u-ml-1">
+                        <img src="assets/apps/teamspeak3.png" alt="cit0s">
+                        TeamSpeak3
+                    </div>
+                </a>
+            </div>
+            <hr>
+            <div>
+                <h4>Game Servers <small style="font-size:0.75rem; color:rgba(255, 255, 255, 0.25);">IP: server.citr0s.com</small></h4>
+                <ul style="padding-left:15px;">
+                    <li>Terraria</li>
+                    <li>Minecraft Java</li>
+                    <li>Minecraft Bedrock</li>
+                    <li>Core Keeper</li>
+                    <li>Open TTD</li>
+                    <li>Factorio</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <hr>
+
+    <iframe src="https://status.citr0s.com/status/default" class="status-iframe" width="100%" height="100%" allowtransparency="yes"></iframe>
+
+    <hr>
+
+    <a title="Broadband Ping" href="https://www.thinkbroadband.com/broadband/monitoring/quality/share/8ff2150182b7f965ef64dfa4957dc434f6b20917" class="isp-graph">
+        <img alt="My Broadband Ping - Lila Connect" src="https://www.thinkbroadband.com/broadband/monitoring/quality/share/8ff2150182b7f965ef64dfa4957dc434f6b20917-2.png">
+    </a>
+
+    <hr>
+
+    <p class="text-small">&copy; {{ currentYear }} Citr0s</p>
+
+</div>
