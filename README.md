@@ -2,7 +2,7 @@
   <img src="src/assets/apps/default.png" width="100" alt="Logo" >
 </p>
 
-<h1 align="center">Citr0s App</h1>
+<h1 align="center">Marek Dura</h1>
 
 <p align="center">
 <a href="https://github.com/Citr0sCo/marek-app/actions/workflows/build.yml"><img src="https://github.com/Citr0sCo/marek-app/actions/workflows/build.yml/badge.svg" alt="Build"></a>
@@ -14,7 +14,7 @@
 
 ---
 
-<h4 align="center">Citr0s web profile.</h4>
+<h4 align="center">Marek Dura's web profile.</h4>
 
 ---
 
